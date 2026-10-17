@@ -177,7 +177,7 @@ def build_system_prompt():
 
 class BusinessAgent:
     def __init__(self, client=None, model=None, reflection=None, log_dir=None):
-        self.client = client  # Injectable SDK-shaped fixture for honest offline tests.
+        self.client = client  # Optional client injection.
         self.live_mode = client is None
         self.model = model or os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
         self.reflection = (os.getenv("ENABLE_REFLECTION", "true").lower() == "true"

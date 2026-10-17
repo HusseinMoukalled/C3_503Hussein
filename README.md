@@ -1,30 +1,51 @@
-# C3 - Agent-Powered Business Assistant
+# CedarLoop Studio Business Assistant
 
-EECE 503P/798S - CedarLoop Studio (fictional business), represented by Mira.
+EECE 503P/798S — C3: Introduction to Agents  
+Hussein Moukalled
 
-The project is under **`business_bot/`**, matching the assignment's folder structure.
+Mira is a virtual assistant for CedarLoop Studio, a fictional business automation
+company. It answers questions using a business profile PDF and text summary, collects
+customer leads, and records feedback or questions that need follow-up.
+
+The demonstration video is shared separately.
+
+## Project
 
 ```text
 business_bot/
-  me/
-    about_business.pdf
-    business_summary.txt
-    summary.txt
-  business_agent.ipynb
-  app.py
-  .env.example
-  requirements.txt
-  agent.py
-  tool_schemas.json
-  tests/
-  examples/live_verification/
-  README.md
-  VIDEO_SCRIPT.md
-  SUBMISSION_STATUS.md
+├── me/
+│   ├── about_business.pdf
+│   ├── business_summary.txt
+│   └── summary.txt
+├── business_agent.ipynb
+├── agent.py
+├── app.py
+├── .env.example
+└── requirements.txt
 ```
 
-The API key belongs in a local `business_bot/.env` and is intentionally not uploaded.
-Both summary filenames are supplied to cover the naming difference in the brief.
+The notebook contains the persona, operational instructions, router, tool definitions,
+agent loop, and Gradio interface. `agent.py` provides the same implementation for the
+standalone app. The two summary filenames cover the names used in the assignment.
+
+## Implementation
+
+Messages are routed as general enquiries, leads, or feedback. The model receives the
+business documents and conversation history. Requested tools run locally, and their
+results are returned to the model before its final reply. Gemini is accessed through
+the OpenAI Python SDK's Chat Completions interface.
+
+| Tool | Parameters | Result |
+|---|---|---|
+| `record_customer_interest` | `email`, `name`, `message` | Saves customer contact details and project notes |
+| `record_feedback` | `question` | Saves feedback or an unanswered question |
+
+Both tools return `{"ok": true, "record_id": "..."}` on success or
+`{"ok": false, "error": "..."}` on failure. Their JSON schemas are defined in the
+notebook and `agent.py`. Records are printed and saved under `logs/`.
+
+The reflection pass checks each draft against the business information and agent
+instructions. Its original draft and revised response are saved in `reflection.jsonl`.
 
 ## Run
 
@@ -33,23 +54,12 @@ cd business_bot
 python -m pip install -r requirements.txt
 ```
 
-Copy `.env.example` to `.env`, add your free-tier Gemini key, then run `python app.py`.
-See the [full setup guide](business_bot/README.md).
+Copy `.env.example` to `.env` and set `GEMINI_API_KEY`, then start the app:
 
-## Required deliverables
+```bash
+python app.py
+```
 
-- [Business PDF](business_bot/me/about_business.pdf) and [summary](business_bot/me/business_summary.txt).
-- [Executed notebook](business_bot/business_agent.ipynb) with separate persona/instructions, router, tools, model interaction, and Gradio.
-- Two model-requested tools, documented [schemas](business_bot/tool_schemas.json), and [real synthetic test evidence](business_bot/examples/live_verification/).
-- 16 passing automated checks and a verified reflection bonus with original and revised replies.
-- [Requirement-by-requirement audit](business_bot/ASSIGNMENT_AUDIT.md) and [validation record](business_bot/VALIDATION.md).
-
-## Final video: to be recorded by the student
-
-The code and documents are ready. **The final demonstration video is still required.**
-Follow the [recording guide](business_bot/VIDEO_SCRIPT.md), record the real app yourself,
-and add the video at `business_bot/media/live_demo.mp4` or provide an accessible video
-link here. Then submit this repository URL and the video to the course.
-
-The assistant's reference recording is excluded from this repository. Hugging Face
-Spaces deployment is an optional bonus and has not been performed.
+The interface opens at `http://127.0.0.1:7860`. The notebook can also be run in Jupyter
+or Colab with the project files present. API keys and runtime logs are excluded from
+the repository. Reflection can be disabled with `ENABLE_REFLECTION=false`.
