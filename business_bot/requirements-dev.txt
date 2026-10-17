@@ -1,0 +1,8 @@
+-r requirements.txt
+nbformat>=5.10,<6
+nbclient>=0.10,<1
+ipykernel>=6.29,<8
+playwright>=1.50,<2
+imageio>=2.35,<3
+imageio-ffmpeg>=0.6,<1
+Pillow>=11,<13

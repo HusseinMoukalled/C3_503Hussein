@@ -1,0 +1,26 @@
+[
+  {
+    "user": "What services do you offer?",
+    "assistant": "Hello! I'm Mira, the virtual concierge for CedarLoop Studio. I'd be happy to outline our services for you:\n\n*   **Workflow discovery:** We analyze your business's most frequent questions and follow-up processes.\n*   **Knowledge-grounded FAQ chatbot:** We build a chatbot that answers questions based on your specific business profile.\n*   **Lead-capture workflow:** A system to help you collect customer names, emails, and project notes.\n*   **Customer-feedback log:** A tool to track suggestions, complaints, and questions.\n*   **Staff handover training:** We provide a practical guide and train your team on how the new workflow functions.\n\nWe begin every project with a free 20-minute introductory consultation to understand your needs. Would you like to know more about how we work?"
+  },
+  {
+    "user": "I'd like a consultation for a bakery FAQ bot.",
+    "assistant": "That sounds like a great project! I can certainly help get that process started. To save your information for the team, I just need a little more detail.\n\nCould you please provide your **full name** and a **valid email address**? Once I have those, I will save your contact details along with your note about the bakery FAQ bot. Please note that saving this record does not create a booking or guarantee a response time, but it will ensure our team has your information for follow-up."
+  },
+  {
+    "user": "My name is Sam Demo and my email is sam@example.com. Please save my details for follow-up about the bakery FAQ bot.",
+    "assistant": "Thank you, Sam! I have successfully saved your details and project notes for our team. \n\nPlease note that while I have recorded your interest, this does not create a booking or guarantee a specific response time. The team will review the information provided to follow up with you. Let me know if you have any other questions in the meantime!"
+  },
+  {
+    "user": "Feedback: your onboarding instructions were confusing.",
+    "assistant": "Thank you for that feedback, Sam. I have logged your comment for our team to review so we can improve our process. I truly appreciate you taking the time to share your experience with me! Is there anything else I can assist you with today?"
+  },
+  {
+    "user": "Do you offer a guaranteed 24/7 response SLA?",
+    "assistant": "Thank you for your question. I have logged your request regarding a guaranteed 24/7 response SLA for our team to review, as we do not publish specific service-level agreements. \n\nIf there is anything else I can help you with, please feel free to ask!"
+  },
+  {
+    "user": "What is your pricing?",
+    "assistant": "We offer a free 20-minute introductory consultation to discuss your specific needs. Because we tailor our work to each business, project pricing is custom-quoted following our discovery process. We do not publish fixed price lists or standard discounts.\n\nWould you like me to help you connect with our team to discuss a quote, or is there anything else I can assist you with today?"
+  }
+]

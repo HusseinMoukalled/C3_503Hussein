@@ -1,0 +1,80 @@
+[
+  {
+    "name": "record_customer_interest",
+    "description": "Save a consenting prospect's supplied contact details and project notes.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "Customer's valid email address."
+        },
+        "name": {
+          "type": "string",
+          "description": "Customer's supplied name."
+        },
+        "message": {
+          "type": "string",
+          "description": "Customer's project or interest notes."
+        }
+      },
+      "required": [
+        "email",
+        "name",
+        "message"
+      ],
+      "additionalProperties": false
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "record_id": {
+          "type": "string"
+        },
+        "error": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ok"
+      ]
+    }
+  },
+  {
+    "name": "record_feedback",
+    "description": "Save customer feedback or a business question missing from the knowledge sources.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "type": "string",
+          "description": "Original feedback or unanswered question."
+        }
+      },
+      "required": [
+        "question"
+      ],
+      "additionalProperties": false
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "record_id": {
+          "type": "string"
+        },
+        "error": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ok"
+      ]
+    }
+  }
+]

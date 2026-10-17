@@ -1,0 +1,10 @@
+{"timestamp": "2026-10-17T14:18:01.691046+00:00", "turn_id": "bab5f681-bfe5-4ae5-b7ab-5dd172b986f2", "event": "router", "intent": "general"}
+{"timestamp": "2026-10-17T14:18:19.476387+00:00", "turn_id": "eb37a615-e321-4a82-a6ec-372f9420c9f2", "event": "router", "intent": "lead"}
+{"timestamp": "2026-10-17T14:18:43.690372+00:00", "turn_id": "3f632ae0-bd92-45cc-bca5-1490e96e6b69", "event": "router", "intent": "lead"}
+{"timestamp": "2026-10-17T14:18:54.935344+00:00", "turn_id": "3f632ae0-bd92-45cc-bca5-1490e96e6b69", "event": "tool", "name": "record_customer_interest", "ok": true}
+{"timestamp": "2026-10-17T14:19:23.076767+00:00", "turn_id": "28960692-7a13-4b9a-afba-fd308eda0a2c", "event": "router", "intent": "feedback"}
+{"timestamp": "2026-10-17T14:19:34.208613+00:00", "turn_id": "28960692-7a13-4b9a-afba-fd308eda0a2c", "event": "tool", "name": "record_feedback", "ok": true}
+{"timestamp": "2026-10-17T14:20:02.382843+00:00", "turn_id": "e220fe90-d90c-4679-a1b7-2c881f52f77a", "event": "router", "intent": "general"}
+{"timestamp": "2026-10-17T14:20:15.663376+00:00", "turn_id": "e220fe90-d90c-4679-a1b7-2c881f52f77a", "event": "tool", "name": "record_feedback", "ok": true}
+{"timestamp": "2026-10-17T14:20:15.664379+00:00", "turn_id": "e220fe90-d90c-4679-a1b7-2c881f52f77a", "event": "router_escalation", "intent": "feedback"}
+{"timestamp": "2026-10-17T14:20:41.142808+00:00", "turn_id": "a0813138-6832-43d2-aeaa-e37812538e23", "event": "router", "intent": "general"}
